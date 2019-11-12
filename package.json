@@ -6,17 +6,22 @@
   "repository": "https://github.com/75lb/isomorphic-assert",
   "keywords": [],
   "license": "MIT",
+  "main": "dist/index.js",
+  "module": "index.mjs",
   "engines": {
     "node": ">=8"
   },
   "scripts": {
-    "test": "test-runner test.js"
+    "test": "npm run dist && esm-runner test.mjs",
+    "dist": "rollup -f umd -n getAssert -o dist/index.js index.mjs"
   },
   "files": [
-    "index.js"
+    "index.mjs",
+    "dist/index.js"
   ],
   "devDependencies": {
     "esm-runner": "^0.2.0",
+    "rollup": "^1.26.5",
     "test-object-model": "^0.4.8"
   }
 }
