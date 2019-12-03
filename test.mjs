@@ -1,4 +1,4 @@
-import Tom from './node_modules/test-object-model/dist/index.mjs'
+import Tom from 'test-object-model/index.mjs'
 import getAssert from './index.mjs'
 
 const tom = new Tom()
@@ -9,7 +9,7 @@ tom.test('simple', async function () {
   try {
     assert.equal(1, 2)
   } catch (err) {
-    if (err.code !== 'ERR_ASSERTION') {
+    if (!(err.code === 'ERR_ASSERTION' || err.name === 'AssertionError')) {
       throw new Error('broken')
     }
   }
