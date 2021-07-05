@@ -1,5 +1,5 @@
-import Tom from 'test-object-model/index.mjs'
-import getAssert from './index.mjs'
+import Tom from '@test-runner/tom'
+import getAssert from 'isomorphic-assert'
 
 const tom = new Tom()
 
