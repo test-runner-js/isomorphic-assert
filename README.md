@@ -7,9 +7,19 @@
 
 # isomorphic-assert
 
-***Work in progress***
+For use in isomorphic test suites where you need an `assert` library which works the same in both Node.js and the browser.
 
-For use in isomorphic test suites.
+```
+npm install --save-dev isomorphic-assert
+```
+
+The exported async function returns either [assert](https://nodejs.org/api/assert.html) (in Node.js context) or [chai assert](https://www.chaijs.com/api/assert/) (Browser). Both are interchangeable.
+
+
+```js
+import getAssert from 'isomorphic-assert'
+const assert = await getAssert()
+```
 
 * * *
 
